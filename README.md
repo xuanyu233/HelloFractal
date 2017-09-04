@@ -7,7 +7,6 @@ Fractal pictures implemented using WebGL
 ##### what I have done:
 - gingerBreadMan
 - fern
-- gasket
 
 ##### what need to do:
 
