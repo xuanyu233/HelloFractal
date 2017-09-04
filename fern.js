@@ -42,10 +42,11 @@ function calculatePoint(){
 				newPoint_y = 0.04 * currPoint_x + 0.85 * currPoint_y + 1.6;
             }
             var max = Math.max(Math.max(max, currPoint_x), currPoint_y);
-            points.push(vec2(newPoint_x, newPoint_y));
+            points.push(vec2(newPoint_x/10, newPoint_y/10));
             currPoint_x = newPoint_x;
             currPoint_y = newPoint_y;
             // console.log(currPoint_x, currPoint_y);
+            // console.log(max);
         }
     }
 }
