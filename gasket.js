@@ -2,10 +2,20 @@ var gl;
 var points;
 var canvas;
 var program;
-var numberPoints = 500;
+var numberPoints = 5000;
 
 function calculatePoint(){
-    
+    var p1 = vec2(-1.0, -1.0);
+    var p2 = vec2(0.0, -1.0);
+    var p3 = vec2(1.0, 1.0);
+
+    points = [];
+    points.push(p1);
+    points.push(p2);
+    points.push(p3);
+
+    p1[1]
+
 }
 
 function canvasInit(){
@@ -18,7 +28,7 @@ function canvasInit(){
 }
 
 function mySetup(){
-    gl.viewport(100, 100, canvas.width, canvas.height);
+    gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
     program = initShaders(gl, "vertex-shader", "fragment-shader");
