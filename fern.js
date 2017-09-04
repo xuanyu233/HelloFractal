@@ -14,6 +14,7 @@ function calculatePoint(){
     var newPoint_y;
     var currPoint_x = startPoint[0];
     var currPoint_y = startPoint[1];
+    var max = 0;
 
     points = [];
     for(var j = 0; j < 250; j++){
@@ -40,10 +41,11 @@ function calculatePoint(){
                 newPoint_x = 0.85 * currPoint_x + 0.04 * currPoint_y + 0.0;
 				newPoint_y = 0.04 * currPoint_x + 0.85 * currPoint_y + 1.6;
             }
-            points.push(vec2(newPoint_x * 100, newPoint_y * 40));
+            var max = Math.max(Math.max(max, currPoint_x), currPoint_y);
+            points.push(vec2(newPoint_x, newPoint_y));
             currPoint_x = newPoint_x;
             currPoint_y = newPoint_y;
-            //console.log(currPoint_x, currPoint_y);
+            // console.log(currPoint_x, currPoint_y);
         }
     }
 }
@@ -58,7 +60,7 @@ function canvasInit(){
 }
 
 function mySetup(){
-    gl.viewport(100, 100, canvas.width, canvas.height);
+    gl.viewport(0, 0, canvas.width, canvas.height);
     gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
     program = initShaders(gl, "vertex-shader", "fragment-shader");
