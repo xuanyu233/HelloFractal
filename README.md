@@ -8,6 +8,7 @@ Fractal pictures implemented using WebGL
 - gingerBreadMan
 - fern
 - mandlbrot
+- hopalong
 
 ##### what need to do:
 
