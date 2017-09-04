@@ -6,7 +6,7 @@ var gl;
 var points;
 var canvas;
 var program;
-var numberPoints = 600;
+var numberPoints = 200;
 
 function calculatePoint(){
     var width = 4;

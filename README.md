@@ -13,3 +13,4 @@ Fractal pictures implemented using WebGL
 
 - more complicated shaders
 - new interface for different fractal
+- interactive fractal page
