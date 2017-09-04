@@ -20,6 +20,8 @@ function calculatePoint(){
         nextPoint_x = M * (1 + 2*L) - currPoint_y + Math.abs(currPoint_x - L * M);
         nextPoint_y = currPoint_x;
 
+        // to normalize this I think need to know the max value of x,y
+        // instead of /canvas.width or /canvas.height
         points.push(vec2(nextPoint_x / canvas.width, nextPoint_y / canvas.height));
         // points.push(vec2(nextPoint_x, nextPoint_y));
         currPoint_x = nextPoint_x;
