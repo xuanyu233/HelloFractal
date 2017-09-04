@@ -1,5 +1,3 @@
-"use strict"
-
 var gl;
 var points;
 var canvas;
@@ -11,7 +9,7 @@ function calculatePoint(){
     var M = 40;
     var L = 3;
     var startPoint = vec2(115, 121);
-    
+
     var currPoint_x = startPoint[0];
     var currPoint_y = startPoint[1];
     var nextPoint_x = startPoint[0];
@@ -21,7 +19,7 @@ function calculatePoint(){
     for( var i = 0; points.length < numberPoints; i++){
         nextPoint_x = M * (1 + 2*L) - currPoint_y + Math.abs(currPoint_x - L * M);
         nextPoint_y = currPoint_x;
-        
+
         //points.push(vec2(nextPoint_x / canvas.width, nextPoint_y / canvas.height));
         points.push(vec2(nextPoint_x, nextPoint_y));
         currPoint_x = nextPoint_x;
@@ -58,7 +56,7 @@ function mySetup(){
 }
 
 function draw(){
-    
+
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.drawArrays(gl.LINE, 0, points.length);
 }
