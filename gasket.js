@@ -5,17 +5,25 @@ var program;
 var numberPoints = 5000;
 
 function calculatePoint(){
-    var p1 = vec2(-1.0, -1.0);
-    var p2 = vec2(0.0, -1.0);
-    var p3 = vec2(1.0, 1.0);
+    var startPoint = [
+        vec2(-1, -1),
+        vec2( 0,  1),
+        vec2( 1, -1)
+    ];
+
+    var u = add(startPoint[0], startPoint[1]);
+    var v = add(startPoint[0], startPoint[2]);
+    var p = scale(0.3, add(u,v));
 
     points = [];
-    points.push(p1);
-    points.push(p2);
-    points.push(p3);
+    points.push(p);
 
-    p1[1]
-
+    for ( var i = 0; points.length < numberPoints; ++i ) {
+        var j = Math.floor(Math.random() * 3);
+        p = add( points[i], startPoint[j] );
+        p = scale( 0.5, p );
+        points.push( p );
+    }
 }
 
 function canvasInit(){

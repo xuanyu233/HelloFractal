@@ -1,3 +1,7 @@
+// include('../common/initShaders.js');
+// include('../common/MV.js');
+// include('../common/webgl-utils.js');
+
 var gl;
 var points;
 var canvas;
@@ -81,3 +85,15 @@ function start(){
     mySetup();
     draw();
 }
+
+// function include(file)
+// {
+//
+//   var script  = document.createElement('script');
+//   script.src  = file;
+//   script.type = 'text/javascript';
+//   script.defer = true;
+//
+//   document.getElementsByTagName('head').item(0).appendChild(script);
+//
+// }

@@ -24,7 +24,7 @@ function calculatePoint(){
         points.push(vec2(nextPoint_x, nextPoint_y));
         currPoint_x = nextPoint_x;
         currPoint_y = nextPoint_y;
-        //console.log(points[i]);
+        // console.log(points[i]);
     }
 }
 
