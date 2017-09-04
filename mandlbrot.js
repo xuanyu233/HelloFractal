@@ -6,7 +6,7 @@ var gl;
 var points;
 var canvas;
 var program;
-var numberPoints = 100;
+var numberPoints = 600;
 
 function calculatePoint(){
     var width = 4;
@@ -15,12 +15,13 @@ function calculatePoint(){
 
     for(var row = 0; row < canvas.height; row ++){
         for(var col = 0; col < canvas.height; col ++){
-            var c_re = (col - canvas.width / 2.0) * 4.0/canvas.width;
-            var c_im = (row - canvas.height/2.0) * 4.0/canvas.width;
+            var c_re = (col - canvas.width / 2.0) * (4.0 / canvas.width);
+            var c_im = (row - canvas.height/2.0) * (4.0 / canvas.width);
 
             var x = 0;
             var y = 0;
             var iteration = 0;
+            var points_tmp = [];
             while(x*x + y * y < 4 && iteration < numberPoints){
                 var x_new = x*x - y*y + c_re;
                 var y_new = 2 * x * y + c_im;
@@ -29,9 +30,15 @@ function calculatePoint(){
                 x = x_new;
                 y = y_new;
 
-                points.push(vec2(x, y));
+                points_tmp.push(vec2(x, y));
                 // console.log(x, y);
             }
+            if(iteration >= numberPoints){
+                for(var i = 0; i < points_tmp.length; i++){
+                    points.push(points_tmp[i]);
+                }
+            }
+
         }
     }
 
