@@ -9,6 +9,7 @@ Fractal pictures implemented using WebGL
 - fern
 - mandlbrot
 - hopalong
+- swirlingtendrils
 
 ##### what need to do:
 
