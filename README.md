@@ -13,6 +13,6 @@ Fractal pictures implemented using WebGL
 
 ##### what need to do:
 
+- One question is that these fractals uses the same code structure, means that only difference is how to calculate their coordinate points, which means they can be combined into one single page but with several buttons to select...
 - more complicated shaders
-- new interface for different fractal
 - interactive fractal page
