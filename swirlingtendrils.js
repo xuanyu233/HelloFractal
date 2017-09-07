@@ -1,7 +1,3 @@
-// include('../common/initShaders.js');
-// include('../common/MV.js');
-// include('../common/webgl-utils.js');
-
 var gl;
 var points;
 var canvas;
@@ -9,8 +5,8 @@ var program;
 var numberPoints = 300000;
 
 function calculatePoint(){
-    var x = 0.5;
-    var y = 0.3;
+    var x = -0.0;
+    var y = -0.5;
     var a = -2.244;
     var b = -0.65;
     var c = 0.43;
@@ -18,14 +14,13 @@ function calculatePoint(){
 
     points = [];
     for(var i = 0; points.length < numberPoints; i++){
-        var x_new = Math.sin(a * y) - Math.cos(b * x);
-        var y_new = Math.sin(c * x) - Math.cos(d * y);
-
-        points.push(vec2(x,y));
-        if(x < -1 || x > 1 || y < -1 || y > 1)
-            console.log(x,y)
+        x_new = Math.sin(a * y) - Math.cos(b * x);
+        y_new = Math.sin(c * x) + Math.cos(d * y);
+        // if(x < -1 || x > 1 || y < -1 || y > 1)
+            // console.log(x/2,y/2)
         x = x_new;
         y = y_new;
+        points.push(vec2(x/2,y/2));
     }
 }
 
